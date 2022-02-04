@@ -1,0 +1,151 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  /* display: none; */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 10vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  border-radius: 1px solid red;
+}
+.modal .header {
+  background-color: black;
+  color: white;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .icon_times img {
+  width: 30%;
+  cursor: pointer;
+}
+.header .icon_times {
+  width: 5%;
+}
+.emptycart {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #eeeeee;
+}
+
+.modal_footer button {
+  width: 100%;
+  height: 50px;
+}
+.main_content {
+  height: 300px;
+  background: #eeeeee;
+  overflow: auto;
+}
+.modal_content {
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px;
+  background: white;
+}
+.modal_content button {
+  border-radius: 50%;
+  background: #e60965;
+}
+.counter {
+  /* display: flex; */
+  /* flex-direction: column; */
+  height: 100px;
+  width: 80%;
+}
+.modal_img {
+  width: 20%;
+}
+.modal_img img {
+  width: 40%;
+}
+
+.ckt {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discount {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  margin-top: 10px;
+  background: white;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.discount div {
+  width: 30%;
+}
+.discount img {
+  width: 30%;
+}
+/* for mobile */
+@media (max-width: 480px) {
+  .modal_img {
+    width: 20%;
+  }
+  .modal_img img {
+    width: 80%;
+  }
+  ul {
+    display: none;
+  }
+  .backdrop {
+    display: none;
+    height: 83px;
+  }
+  .modal {
+    position: fixed;
+    top: 200px;
+    width: 100%;
+  }
+  .modal header {
+    background-color: white;
+  }
+}
+/* for tablet  */
+@media (max-width: 908px) {
+  .modal_img {
+    width: 20%;
+  }
+  .modal_img img {
+    width: 80%;
+  }
+
+  .backdrop {
+    display: none;
+    height: 83px;
+  }
+  .modal {
+    position: fixed;
+    top: 200px;
+    width: 100%;
+  }
+  .modal header {
+    background-color: white;
+  }
+}
