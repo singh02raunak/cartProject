@@ -17,17 +17,19 @@
   flex-basis: 20%;
   padding: 0px;
 }
+
 .cartIcon ul li a {
   display: inline-block;
   text-decoration: none;
   margin-left: 10px;
-  /* margin-right: 0px; */
 }
+
 .image {
   background-color: #eeeeee;
   display: flex;
+  padding: 4px;
 }
+
 .image img {
   width: 50px;
-  color: red;
 }

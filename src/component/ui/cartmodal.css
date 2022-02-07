@@ -11,12 +11,12 @@
 
 .modal {
   position: fixed;
-  top: 10vh;
   left: 10%;
-  width: 80%;
+  width: 85%;
   z-index: 100;
-  border-radius: 1px solid red;
+  /* border-radius: 1px solid red; */
 }
+
 .modal .header {
   background-color: black;
   color: white;
@@ -103,49 +103,35 @@
 .discount img {
   width: 30%;
 }
-/* for mobile */
-@media (max-width: 480px) {
-  .modal_img {
-    width: 20%;
-  }
-  .modal_img img {
-    width: 80%;
-  }
-  ul {
-    display: none;
-  }
-  .backdrop {
-    display: none;
-    height: 83px;
-  }
+
+/* for tablet */
+@media (max-width: 768px) {
   .modal {
-    position: fixed;
-    top: 200px;
-    width: 100%;
-  }
-  .modal header {
-    background-color: white;
-  }
-}
-/* for tablet  */
-@media (max-width: 908px) {
-  .modal_img {
-    width: 20%;
-  }
-  .modal_img img {
-    width: 80%;
+    width: 90%;
+    margin: auto;
+    left: 0%;
+    height: 100vh;
+    position: relative;
+    z-index: 300;
   }
 
   .backdrop {
     display: none;
-    height: 83px;
   }
+}
+
+/* for mobile */
+@media (max-width: 480px) {
   .modal {
-    position: fixed;
-    top: 200px;
-    width: 100%;
+    width: 90%;
+    margin: auto;
+    left: 0%;
+    height: 100vh;
+    position: relative;
+    z-index: 100;
   }
-  .modal header {
-    background-color: white;
+
+  .backdrop {
+    display: none;
   }
 }

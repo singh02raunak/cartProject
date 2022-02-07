@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../ui/Button";
 import "./home.css";
 import Header from "./Header.js";
-import Footer from "../Layout/Footer";
 import HomeSlider from "./HomeSlider";
 import { Link } from "react-router-dom";
 
@@ -49,8 +48,8 @@ export default function Home() {
           <div className="col">
             <h2>Bakery Cakes and Dairy</h2>
             <p>
-              The best cupcakes,cookies,cakes,pie,cheesecakes,fresh
-              bread,biscuit,muffins,bagels,fresh coffee,milk and more
+              The best cupcakes cookiesm cakes pie cheesecakes fresh bread
+              biscuit muffins bagels fresh coffee milk and more
             </p>
             <Button>
               <Link to="/products">Explore</Link>
@@ -60,7 +59,7 @@ export default function Home() {
         <div className="categories">
           <div className="col">
             <h2>Baby Care</h2>
-            <p>Shop online for baby Products,Diapers,skin,care,products</p>
+            <p>Shop online for baby Products Diapers skin care products</p>
             <Button>
               <Link to="/products">Explore</Link>
             </Button>
@@ -85,9 +84,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* footer */}
-
-      <Footer />
     </>
   );
 }

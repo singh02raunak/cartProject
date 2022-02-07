@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Footer from "../Layout/Footer";
+import { useSelector } from "react-redux";
 import Header from "../Layout/Header";
 import "./Landing.css";
 import Products from "./Products";
@@ -10,6 +10,9 @@ export default function Landing() {
   const [category, setCategory] = useState(null);
   const [items, setItem] = useState([]);
 
+  const Modal = useSelector((state) => {
+    return state.modal;
+  });
   // calling products items from backend and setting it with state
   useEffect(() => {
     axios.get("http://localhost:3333/products").then((res) => {
@@ -27,25 +30,43 @@ export default function Landing() {
 
   // setting menu dynamically
 
-  let content = menu.map((item) => {
-    return (
-      <div key={item.id}>
-        {" "}
-        <li onClick={() => setCategory(item.id)}>{item.name}</li>
+  let content =
+    menu.length > 0 ? (
+      menu.map((item) => {
+        return (
+          <div key={item.id}>
+            {" "}
+            <li onClick={() => setCategory(item.id)}>{item.name}</li>
+          </div>
+        );
+      })
+    ) : (
+      <div style={{ textAlign: "center", width: "100%" }}>
+        <p>loading...</p>
       </div>
     );
-  });
   // binding data with menu
-  let filterCategory = items.filter((item) => {
-    return item.category === category;
-  });
+  let filterCategory =
+    items.length > 0 ? (
+      items.filter((item) => {
+        return item.category === category;
+      })
+    ) : (
+      <div style={{ textAlign: "center", width: "100%" }}>
+        <p>loading...</p>
+      </div>
+    );
 
   return (
     <>
       <Header />
-      <div className="landing container">
-        <ul className="sidenavbar">{content}</ul>
-        <Products items={category ? filterCategory : items} />
+      <div className="container">
+        {!Modal && (
+          <div className="landing">
+            <ul className="sidenavbar">{content}</ul>
+            <Products items={category ? filterCategory : items} />
+          </div>
+        )}
       </div>
     </>
   );

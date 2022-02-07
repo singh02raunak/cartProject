@@ -1,5 +1,21 @@
 .footer {
-  background-color: #eeeeee;
-  /*  */
   max-width: 100%;
+  background-color: #eeeeee;
+  text-align: center;
+}
+
+.footer_content {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+  height: 80px;
+  margin: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer_content {
+    justify-content: center;
+  }
 }

@@ -23,14 +23,14 @@ export default function ProductItem(props) {
     <>
       <ul>
         <li className="heading">
-          <h2>{name}</h2>
+          <h3>{name}</h3>
         </li>
         <li className="img">
           <img src={image} alt="img" />
         </li>
 
         <li className="description">{description}</li>
-        <li className="footer">
+        <li className="footer_product">
           <p>
             MRP Rs.
             {price}

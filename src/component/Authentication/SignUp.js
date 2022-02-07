@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "../Layout/Footer";
 import Header from "../Layout/Header";
 import "./SignUp.css";
 
@@ -119,7 +118,6 @@ export default function SignUp() {
         </main>
       </div>
       {/* footer */}
-      <Footer />
     </>
   );
 }

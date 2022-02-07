@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "../Layout/Footer";
 import Header from "../Layout/Header";
 import "./Login.css";
 
@@ -62,7 +61,7 @@ export default function Login() {
           </div>
         </main>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

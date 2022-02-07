@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./component/Authentication/Login";
 import SignUp from "./component/Authentication/SignUp";
+import Footer from "./component/Layout/Footer";
 import Home from "./component/Layout/Home";
 import Landing from "./component/Product/Landing";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

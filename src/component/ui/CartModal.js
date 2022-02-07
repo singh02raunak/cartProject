@@ -64,7 +64,7 @@ export default function CartModal(props) {
                     <button onClick={cartItemRemoveHandler.bind(null, item.id)}>
                       -
                     </button>{" "}
-                    &times; {item.price * item.amount}
+                    &times; {item.price}
                   </div>
                   <div className="modal_price">
                     Rs.{item.price * item.amount}

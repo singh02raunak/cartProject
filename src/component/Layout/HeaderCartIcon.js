@@ -16,7 +16,6 @@ export default function HeaderCartIcon(props) {
   }, 0);
   return (
     <div className="cartIcon">
-      {/* <div>hello raunak singh hpw u </div> */}
       {/* authentication page */}
       <ul>
         <li>

@@ -8,6 +8,11 @@ body {
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+  /* margin: 0px;
+  padding: 0px; */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -22,8 +27,8 @@ a {
   margin-left: 10px;
 }
 /* mobile */
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .footer {
     text-align: center;
   }
-}
+} */
