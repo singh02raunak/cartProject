@@ -36,9 +36,8 @@
   .sidenavbar {
     width: 100%;
   }
-  .sidenavbar div,
-  li {
-    display: inline;
+  div.sidenavbar li {
+    display: inline-block;
   }
 }
 

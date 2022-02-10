@@ -89,7 +89,9 @@ export default function CartModal(props) {
                 <p> Rs{totalprice}</p>
               </div>
             ) : (
-              <Link to="/">Start shoping</Link>
+              <Link to="/" onClick={props.onClose}>
+                Start shoping
+              </Link>
             )}
           </Button>
         </footer>
