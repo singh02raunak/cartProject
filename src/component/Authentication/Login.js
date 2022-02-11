@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Layout/Header";
 import "./Login.css";
 
 export default function Login() {
   const [emailFocus, setEmailFocus] = useState(false);
   const [passwordFocus, setPaswordFocus] = useState(false);
+
+  const Navigate = useNavigate();
+  const enterEmail = useRef();
+  const enterPassword = useRef();
 
   const emailFocusHanlder = (e) => {
     setEmailFocus(true);
@@ -19,6 +25,20 @@ export default function Login() {
   const emailUnfocusHandler = (e) => {
     setEmailFocus(false);
   };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const enteredEmail = enterEmail.current.value;
+    const enteredPassword = enterPassword.current.value;
+    if (!enteredEmail.includes("@") || enteredPassword.length < 6) {
+      return;
+    }
+
+    Navigate("/");
+    console.log(enteredEmail);
+    console.log(enteredPassword);
+  };
+
   return (
     <>
       <Header />
@@ -32,7 +52,7 @@ export default function Login() {
           </div>
           {/* login-form */}
           <div className="form-wrap">
-            <form>
+            <form onSubmit={submitHandler}>
               <div className={`form-group ${emailFocus ? "focus" : ""} `}>
                 <label htmlFor="email">Email</label>
                 <input
@@ -41,6 +61,7 @@ export default function Login() {
                   id="email"
                   onFocus={emailFocusHanlder}
                   onBlur={emailUnfocusHandler}
+                  ref={enterEmail}
                 />
               </div>
               <div className={`form-group ${passwordFocus ? "focus" : ""} `}>
@@ -51,11 +72,12 @@ export default function Login() {
                   id="password"
                   onFocus={passowrdFocusHanlder}
                   onBlur={passwordUnfocusHandler}
+                  ref={enterPassword}
                 />
               </div>
 
               <button type="submit" className="btn">
-                Sign Up
+                Sign In
               </button>
             </form>
           </div>

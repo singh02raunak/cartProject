@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Layout/Header";
 import "./SignUp.css";
 
@@ -8,6 +9,13 @@ export default function SignUp() {
   const [fnameFocus, setfnameFocus] = useState(false);
   const [lnameFocus, setlnameFocus] = useState(false);
   const [confirm, setconfirmFocus] = useState(false);
+
+  const Navigate = useNavigate();
+  const enterEmail = useRef();
+  const enterPassword = useRef();
+  const enterFname = useRef();
+  const enterLname = useRef();
+  const confirmPassword = useRef();
 
   const emailFocusHanlder = (e) => {
     setEmailFocus(true);
@@ -46,6 +54,26 @@ export default function SignUp() {
     setfnameFocus(false);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const enteredEmail = enterEmail.current.value;
+    const enteredPassword = enterPassword.current.value;
+    const enteredFname = enterFname.current.value;
+    const enteredLname = enterLname.current.value;
+    const enteredConfirmPassword = confirmPassword.current.value;
+    console.log(enterFname);
+    if (
+      enteredEmail.includes("@") &&
+      enteredFname.length > 6 &&
+      enteredLname.length > 6 &&
+      enteredPassword.length > 6 &&
+      enteredConfirmPassword.length > 6 &&
+      enteredPassword === enteredConfirmPassword
+    ) {
+      Navigate("/login");
+    } else return;
+  };
+
   return (
     <>
       <Header />
@@ -59,7 +87,7 @@ export default function SignUp() {
           </div>
           {/* registration -form */}
           <div className="form-wrap">
-            <form>
+            <form onSubmit={submitHandler}>
               <div className={`form-group ${fnameFocus ? "focus" : ""} `}>
                 <label htmlFor="first-name">First Name</label>
                 <input
@@ -68,6 +96,7 @@ export default function SignUp() {
                   id="first-name"
                   onFocus={fnameFocusHanlder}
                   onBlur={fnameUnfocusHandler}
+                  ref={enterFname}
                 />
               </div>
               <div className={`form-group ${lnameFocus ? "focus" : ""} `}>
@@ -78,6 +107,7 @@ export default function SignUp() {
                   id="last-name"
                   onFocus={lnameFocusHanlder}
                   onBlur={lnameUnfocusHandler}
+                  ref={enterLname}
                 />
               </div>
               <div className={`form-group ${emailFocus ? "focus" : ""} `}>
@@ -88,6 +118,7 @@ export default function SignUp() {
                   id="email"
                   onFocus={emailFocusHanlder}
                   onBlur={emailUnfocusHandler}
+                  ref={enterEmail}
                 />
               </div>
               <div className={`form-group ${passwordFocus ? "focus" : ""} `}>
@@ -98,6 +129,7 @@ export default function SignUp() {
                   id="password"
                   onFocus={passowrdFocusHanlder}
                   onBlur={passwordUnfocusHandler}
+                  ref={enterPassword}
                 />
               </div>
               <div className={`form-group ${confirm ? "focus" : ""} `}>
@@ -108,6 +140,7 @@ export default function SignUp() {
                   id="password2"
                   onFocus={confirmFocusHanlder}
                   onBlur={confirmUnfocusHandler}
+                  ref={confirmPassword}
                 />
               </div>
               <button type="submit" className="btn">
