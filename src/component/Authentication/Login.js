@@ -38,6 +38,7 @@ export default function Login() {
     console.log(enteredEmail);
     console.log(enteredPassword);
   };
+  console.log("login");
 
   return (
     <>

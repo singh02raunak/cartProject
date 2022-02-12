@@ -22,7 +22,9 @@ export default function Home() {
             <h2>Fruits and Vegetables</h2>{" "}
             <p>A variety of fresh fruits and vegetables</p>
             <Button>
-              <Link to="/products">Explore</Link>
+              <Link tabIndex={0} to="/products">
+                Explore
+              </Link>
             </Button>
           </div>
         </div>

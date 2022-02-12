@@ -6,3 +6,9 @@
   width: 90px;
   cursor: pointer;
 }
+
+.btn a {
+  color: white;
+  display: inline-block;
+  margin: 0;
+}

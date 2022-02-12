@@ -34,10 +34,9 @@ export default function Landing() {
     menu.length > 0 ? (
       menu.map((item) => {
         return (
-          <div key={item.id}>
-            {" "}
-            <li onClick={() => setCategory(item.id)}>{item.name}</li>
-          </div>
+          <li key={item.id} onClick={() => setCategory(item.id)}>
+            {item.name}
+          </li>
         );
       })
     ) : (

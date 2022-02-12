@@ -26,22 +26,26 @@ export default function Header() {
     <>
       <div className="main-head">
         <div className="container ">
-          <div className="header">
-            <div className="navbar">
+          <header className="header">
+            <nav className="navbar">
               {/* <Link to="/"> */}
               <img src={logo} alt="logo_img" />
               {/* </Link> */}
               {/* menu item */}
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
-                  <Link to="/products">Products</Link>
+                  <Link tabIndex={0} to="/">
+                    Home
+                  </Link>
+                  <Link tabIndex={0} to="/products">
+                    Products
+                  </Link>
                 </li>
               </ul>
-            </div>
+            </nav>
             {/* cart icon component */}
             <HeaderCartIcon onOpenCart={showCartHandler} />
-          </div>
+          </header>
         </div>
       </div>
       {/* display cart when u clicked carticon */}

@@ -8,12 +8,38 @@ export default function HomeSlider() {
         type="radio"
         name="image-slider"
         className="to-one"
+        aria-label="corosoul"
+        id="first"
         defaultChecked
       />
-      <input type="radio" name="image-slider" className="to-two" />
-      <input type="radio" name="image-slider" className="to-three" />
-      <input type="radio" name="image-slider" className="to-four" />
-      <input type="radio" name="image-slider" className="to-five" />
+      <input
+        tabIndex={0}
+        type="radio"
+        name="image-slider"
+        aria-label="corosoul"
+        className="to-two"
+      />
+      <input
+        tabIndex={0}
+        type="radio"
+        name="image-slider"
+        aria-label="corosoul"
+        className="to-three"
+      />
+      <input
+        tabIndex={0}
+        type="radio"
+        name="image-slider"
+        aria-label="corosoul"
+        className="to-four"
+      />
+      <input
+        tabIndex={0}
+        type="radio"
+        name="image-slider"
+        aria-label="corosoul"
+        className="to-five"
+      />
       <div className="images">
         <img
           src="static/images/offers/offer1.jpg"
